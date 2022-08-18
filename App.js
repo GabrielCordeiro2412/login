@@ -2,8 +2,6 @@ import { StyleSheet, Text, View, SafeAreaView, TextInput, TouchableOpacity, Aler
 import React, {useState, useEffect, } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-
-
 export default function App() {
 
   const [resultado, setResultado] = useState()
