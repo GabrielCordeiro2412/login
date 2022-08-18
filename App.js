@@ -9,7 +9,7 @@ export default function App() {
 
   async function saveItem(){
      try{
-      await AsyncStorage.setItem('@app:user', userName)
+      await AsyncStorage.setItem('@aplicativoLogin:nome', userName)
       //Alert.alert(userName)
       setResultado(`Seja bem vindo, ${userName}`)
      }catch(err){
@@ -20,11 +20,11 @@ export default function App() {
   useEffect(() =>{
     async function fetchData(){
       try{
-        const user = await AsyncStorage.getItem('@app:user')
+        const user = await AsyncStorage.getItem('@aplicativoLogin:nome')
         if(user){
-          setResultado(`Seja bem vindo, ${user}`)
+          setResultado(`Seja bem vindo/a, ${user}`)
         }else{
-          setResultado("Nenhuma informação encontrada")
+          setResultado("Nenhuma informação foi encontrada")
         }
       }catch(err){
         console.log(err)
@@ -34,7 +34,7 @@ export default function App() {
 
   async function clear(){
     await AsyncStorage.clear()
-    setResultado("Nenhuma informação encontrada")
+    setResultado("Nenhuma informação foi encontrada")
   }
 
   return (
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     
   },
   btnLogin:{
-    backgroundColor: 'blue',
+    backgroundColor: 'purple',
     height: 40,
     width: 100,
     borderRadius: 5,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   btnLimpar:{
-    backgroundColor: 'blue',
+    backgroundColor: 'purple',
     height: 40,
     width: 100,
     borderRadius: 5,
